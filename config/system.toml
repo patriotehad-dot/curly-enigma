@@ -1,0 +1,89 @@
+title = "Zombi"
+version = "2.0.0"
+status = "active"
+category = "ai-system"
+
+[system]
+id = "zombi-system"
+description = "Yüksek zekâ tabanlı ve senkronize edilmiş sistem tasarımı. Sistem, metaveri, durum akışı, güvenlik ve otomasyon gereksinimlerini tek bir merkezden yönetir."
+
+[identity]
+author_name = "EHAD TONGUZ"
+author_email = "patriot.ehad@gmail.com"
+owner_organization = "patriotehad-dot"
+owner_repository = "Geli-im-"
+description = "Zombi, proje içi durum takibi, metadata yönetimi ve otomasyon için tasarlanmış yapılandırılmış bir sistem tanımıdır."
+
+[state]
+current = "synchronized"
+lifecycle = ["initialized", "normalized", "metadata-expanded", "validated", "synchronized"]
+history = ["initialized", "normalized", "metadata-expanded", "validated", "synchronized"]
+
+[state.transitions]
+initialized = "normalized"
+normalized = "metadata-expanded"
+metadata-expanded = "validated"
+validated = "synchronized"
+
+[environment]
+type = "repository"
+branch = "DileepY/revert_notifications"
+runtime = "static-text"
+deployment_target = "github-repository"
+platform = "github"
+
+[modules.core]
+name = "zombi-core"
+status = "active"
+description = "Ana sistem davranışını yönetir."
+
+[modules.metadata]
+name = "zombi-metadata"
+status = "active"
+description = "Sistem bilgilerini ve tanımlayıcı değerleri tutar."
+
+[modules.sync]
+name = "zombi-sync"
+status = "active"
+description = "Durum senkronizasyonunu yönetir."
+
+[modules.security]
+name = "zombi-security"
+status = "active"
+description = "İzin, güvenlik ve erişim kontrolünü sağlar."
+
+[modules.validation]
+name = "zombi-validation"
+status = "active"
+description = "Sistem bütünlüğünü denetler ve kalite kontrolü yapar."
+
+[permissions]
+read = true
+write = true
+execute = false
+admin = false
+
+[security]
+public = true
+sensitive = false
+encrypted = false
+audit_enabled = true
+
+[metadata]
+created_at = "2026-10-26"
+updated_at = "2026-10-26"
+last_sync = "2026-10-26T11:58:36Z"
+
+tags = ["zombi", "ai", "system", "sync", "automation", "metadata", "project-manifest", "validation"]
+
+[[notes]]
+text = "Sistem orijinal olarak binary formatta ortaya çıktı."
+
+[[notes]]
+text = "Daha sonra okunabilir metin ve manifest biçimine dönüştürüldü."
+
+[[notes]]
+text = "Bu yapı, proje içi tanımlayıcı ve durumsal bilgi için kullanılabilir."
+
+[[notes]]
+text = "Sistem geliştirme sürecinde doğrulama ve belgeleme katmanı entegre edildi."

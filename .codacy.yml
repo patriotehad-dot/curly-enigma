@@ -1,0 +1,10 @@
+# Exclude vendored/generated fixture directories that contain UTF-16 test assets.
+# Codacy's CLI crashes while reading these files, which causes the workflow job to fail.
+# This keeps the scan focused on the actual project sources.
+exclude_paths:
+  - "src/vs/**/fixtures/**"
+  - "src/vs/workbench/services/search/test/node/fixtures/**"
+  - "src/vs/workbench/services/textfile/test/node/encoding/fixtures/**"
+  - "src/vs/platform/files/test/node/fixtures/service/**"
+  - "build/**"
+  - "extensions/**"

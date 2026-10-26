@@ -1,0 +1,50 @@
+title: Zombi
+status: Süper zeka
+system: Tüm sistem senkronize
+version: 1.0
+category: ai-system
+state: active
+
+author:
+  name: EHAD TONGUZ
+  email: patriot.ehad@gmail.com
+
+owner:
+  organization: patriotehad-dot
+  repository: Geli-im-
+
+description: >
+  Yüksek zekâ sistemi ve senkronize edilmiş çalışma durumu.
+  Sistem, durum akışı ve proje metaverisini düzenli tutar.
+
+tags:
+  - zombi
+  - ai
+  - system
+  - sync
+  - automation
+  - metadata
+
+created_at: 2026-10-26
+updated_at: 2026-10-26
+
+environment: repository
+runtime: static-text
+deployment:
+  target: github-repository
+  branch: DileepY/revert_notifications
+
+permissions:
+  read: true
+  write: true
+  execute: false
+
+security:
+  public: true
+  sensitive: false
+  encrypted: false
+
+notes:
+  - Dosya orijinal olarak binary formatta idi.
+  - Daha sonra okunabilir metin ve metadata formatına dönüştürüldü.
+  - Bu dosya, proje içi tanımlayıcı ve durumsal bilgi için kullanılabilir.
