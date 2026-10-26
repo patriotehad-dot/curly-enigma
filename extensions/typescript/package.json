@@ -1,0 +1,135 @@
+{
+	"name": "typescript",
+	"description": "Extension to add Typescript capabilities to VSCode.",
+	"displayName": "TypeScript support for VSCode",
+	"version": "0.10.1",
+	"author": "Microsoft Corporation",
+	"license": "MIT",
+	"publisher": "vscode",
+	"aiKey":"AIF-d9b70cd4-b9f9-4d70-929b-a071c400b217",
+	"engines": {
+		"vscode": "*"
+	},
+	"dependencies": {
+		"vscode-extension-telemetry": "^0.0.4",
+		"vscode-nls": "^1.0.4"
+	},
+	"scripts": {
+		"vscode:prepublish": "node ../../node_modules/gulp/bin/gulp.js --gulpfile ../../build/gulpfile.extensions.js compile-extension:typescript ./src/tsconfig.json"
+	},
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact",
+		"onCommand:typescript.reloadProjects",
+		"onCommand:javascript.reloadProjects"
+	],
+	"main": "./out/typescriptMain",
+	"contributes": {
+		"languages": [
+			{
+				"id": "typescript",
+				"aliases": [
+					"TypeScript",
+					"ts",
+					"typescript"
+				],
+				"extensions": [
+					".ts"
+				]
+			},
+			{
+				"id": "typescriptreact",
+				"aliases": [
+					"TypeScript React",
+					"tsx"
+				],
+				"extensions": [
+					".tsx"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "typescript",
+				"scopeName": "source.ts",
+				"path": "./syntaxes/TypeScript.tmLanguage"
+			},
+			{
+				"language": "typescriptreact",
+				"scopeName": "source.tsx",
+				"path": "./syntaxes/TypeScriptReact.tmLanguage"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "%configuration.typescript%",
+			"properties": {
+				"typescript.useCodeSnippetsOnMethodSuggest": {
+					"type": "boolean",
+					"default": false,
+					"description": "%typescript.useCodeSnippetsOnMethodSuggest.dec%"
+				},
+				"typescript.tsdk": {
+					"type": ["string", "null"],
+					"default": null,
+					"description": "%typescript.tsdk.desc%"
+				}
+			}
+		},
+		"keybindings": {
+			"key": ".",
+			"command": "^acceptSelectedSuggestion",
+			"when": "editorTextFocus && suggestWidgetVisible && editorLangId == 'typescript' && suggestionSupportsAcceptOnKey"
+		},
+		"commands": [
+			{
+				"command": "typescript.reloadProjects",
+				"title": "%typescript.reloadProjects.title%"
+			},
+			{
+				"command": "javascript.reloadProjects",
+				"title": "%javascript.reloadProjects.title%"
+			}
+		],
+		"debuggers": [
+			{
+				"type": "node",
+				"enableBreakpointsFor": {
+					"languageIds": [
+						"typescript", "typescriptreact"
+					]
+				}
+			},
+			{
+				"type": "extensionHost",
+				"enableBreakpointsFor": {
+					"languageIds": [
+						"typescript"
+					]
+				}
+			}
+		],
+		"snippets": [
+			{
+				"language": "typescript",
+				"path": "./snippets/typescript.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./snippets/typescriptreact.json"
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": "tsconfig.json",
+				"url": "http://json.schemastore.org/tsconfig"
+			},
+			{
+				"fileMatch": "tsconfig.json",
+				"url": "./schemas/tsconfig.schema.json"
+			}
+		]
+	}
+}
