@@ -1,0 +1,18 @@
+{
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		"lib": [
+			"es5",
+			"es2015.promise"
+		],
+		"outDir": "./out",
+		"strictNullChecks": true
+	},
+	"exclude": [
+		"node_modules",
+		"server",
+		"out",
+		"test/colorize-fixtures"
+	]
+}
